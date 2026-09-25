@@ -1,0 +1,15 @@
+{
+  "name": "skill-upgrade",
+  "owner": {
+    "name": "IAHCARUS",
+    "url": "https://github.com/Knight1598"
+  },
+  "description": "Skills that improve other skills from how they actually ran.",
+  "plugins": [
+    {
+      "name": "skill-upgrade",
+      "source": "./products/skill-upgrade",
+      "description": "Upgrade the skill that just ran, from what went wrong in that run: minimal fixes in its real source, a regression eval, and a version bump."
+    }
+  ]
+}

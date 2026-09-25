@@ -1,0 +1,9 @@
+{
+  "name": "skill-upgrade",
+  "version": "0.1.0",
+  "description": "Upgrade the skill that just ran, from what went wrong in that run: minimal fixes in its real source, a regression eval, and a version bump.",
+  "author": { "name": "IAHCARUS", "url": "https://github.com/Knight1598" },
+  "homepage": "https://github.com/Knight1598/skill-upgrade",
+  "repository": "https://github.com/Knight1598/skill-upgrade",
+  "keywords": ["skills", "skill-improvement", "evals", "claude-code", "codex"]
+}

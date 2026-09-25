@@ -1,0 +1,25 @@
+# SkillSpec v1 — build metadata for the factory and lint. Agents never load it at runtime.
+# Keep values on one line. Lists use [a, b]. Include trigger phrases in every language users speak.
+name: skill-upgrade
+version: 0.1.0
+status: beta
+tier: standard
+release: internal
+problem: When a skill underperforms, the lesson stays in the chat; asked to fix it, agents edit the installed cache copy that updates overwrite, rewrite the whole skill, or guess at problems nobody observed.
+delta: Picks the skill that just ran, lists concrete misses from that run, edits its real source with one minimal change per miss, adds a regression eval, bumps the version, and reports.
+triggers: [upgrade the skill I just used, improve that skill, the skill did badly, make the last skill better, อัพเกรดสกิล, ปรับสกิลที่เพิ่งใช้, สกิลเมื่อกี้ทำงานไม่ดี]
+not_for: [creating a new skill, fixing app code, one-off preferences, summarizing a session]
+inputs: A skill that ran in this session, or a named skill, plus what went wrong (from the session or the user).
+outputs: Minimal edits in the skill's source, one regression eval per fixed miss, a version bump, and a report of 8 lines or fewer.
+scope: Only the target skill's own source files; never the plugin cache, other skills, or the project the skill was used on.
+risk: medium
+token:
+  read: targeted
+  scan: none
+  verify: light
+  output: terse
+depends_on: []
+compatible_with: []
+conflicts_with: []
+fallback: With no concrete miss, ask one question about what went wrong; with no writable source, write the proposed change as a patch file and say where it must be applied.
+verify: Re-read the diff, confirm each edit maps to one listed miss, and run the source repository's own lint or tests when it has them.
